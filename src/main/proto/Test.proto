@@ -1,0 +1,28 @@
+syntax = "proto3";
+option java_multiple_files = true;
+option java_package="com.taxiao.client";
+option java_outer_classname="TestProto";
+option objc_class_prefix="HLW";
+
+package client;
+
+service Hello{
+  rpc SayHello(HelloRequest) returns (HelloReply){}
+}
+
+// The request message containing the user's name
+message HelloRequest{
+  string name =1;
+  Platform platform=2;
+}
+
+// The response message containing the greetings
+message HelloReply{
+  string message=1;
+  Platform platform=2;
+}
+
+enum Platform{
+  AA = 0;
+  BB = 1;
+}
